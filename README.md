@@ -6,5 +6,4 @@ This will keep your HTML contents safe.
     <script src="js/InputGurd.js" ></script>
 ```
 
-* Thats All For Now
-This Is A Beta Version
+* Thats All For Now. Don't Forget This Is A Beta Version

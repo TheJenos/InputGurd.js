@@ -17,6 +17,7 @@ This Will Keep Your Input Elements Safe.
 ## Installation
 * First, make sure you are using valid DOCTYPE
 * Include nessesary JS files
+
 ```
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/InputGurd.js" ></script>
@@ -48,6 +49,7 @@ This Will Keep Your Input Elements Safe.
 
 #### Add 'unique-' Prefixes To Set Unique Attribute
 * 'unique-' Attribute Will Be Hide After First Run
+
 ```
     <input unique-ng-model ng-model="test" ... >
 ```

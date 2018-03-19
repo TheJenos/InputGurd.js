@@ -14,7 +14,8 @@ This will keep your HTML contents safe.
 * Thats All For Now. Don't Forget This Is A Beta Version
 
 ### Rules
-#### If You Delete An Element, Page Will Refresh
+#### If You Delete A Protected Input Element, Page Will Refresh
+#### Non Unique Id's Are Not Allowed
 #### I Removed Attribute_Lock From These Attributes
 * Class
 * Style
@@ -32,6 +33,12 @@ This will keep your HTML contents safe.
 #### Add 'nt-' Prefixes to Attribute for prevent Attribute_Lock.
 ```
     <input nt-placeholder="Password" ... >
+```
+
+#### Add 'unique-' Prefixes To Set Unique Attribute
+* 'unique-' Attribute Will Be Hide After First Run
+```
+	<input unique-ng-model ng-model="test" ... >
 ```
 
 #### If You Need To Apply InputGurd To Specific Element.

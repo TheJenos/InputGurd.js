@@ -23,8 +23,9 @@
     $.fn.InputGurd = function (xf) {
         var inputlist = [];
         var that = this;
+        var tmptxt = xf;
         function init() {
-            var x = $(that).find(xf != undefined ? xf : 'input,select,option,textarea');
+            var x = $(that).find(tmptxt != undefined ? tmptxt : 'input,select,option,textarea');
             inputlist = [];
             for (var i = 0; i < x.length; i++) {
                 var obj = $(x[i]);
@@ -35,6 +36,9 @@
                     index = index.toLowerCase();
                     if (index != 'style' && index != 'class' && !(index.startsWith('nt-'))) {
                         final[index] = element;
+                        if(index.startsWith('unique-')){
+                            obj.removeAttr(index);
+                        }
                     } else {
                         if (index.startsWith('nt-')) {
                             obj.attr(index.replace('nt-', ''), element);
@@ -52,12 +56,26 @@
         }
         init();
         this.bind('DOMNodeInserted DOMNodeRemoved', function () {
+            $('[id]').each(function () {
+                var ids = $('[id="' + this.id + '"]');
+                if (ids.length > 1 && ids[0] == this)
+                    location.reload();
+            });
             init();
         });
         setInterval(function () {
             for (var i = 0; i < inputlist.length; i++) {
                 var obj = inputlist[i];
                 for (var item in obj) {
+                    if (item.startsWith('unique-')) {
+                        var atrtxt = item.replace('unique-', '');
+                        $('[' + atrtxt + ']').each(function () {
+                            var ids = $('[' + atrtxt + '="' + $(this).attr(atrtxt) + '"]');
+                            if (ids.length > 1 && ids[0] == this)
+                                location.reload();
+                        });
+                        continue;
+                    }
                     if (item != 'object') {
                         if (obj.object.attr(item) != obj[item]) {
                             obj.object.attr(item, obj[item]);

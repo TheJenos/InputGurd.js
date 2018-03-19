@@ -15,7 +15,8 @@
                     <div class="card mb-3">
                         <div class="card-body">
                             <h3>Try to edit any attribute using your browser</h3>
-                            <b>If You Delete An Element, Page Will Refresh</b><br>
+                            <b>If You Delete A Protected Input Element, Page Will Refresh</b><br>
+                            <b>Non Unique Id's Are Not Allowed</b><br>
                             <b>I Removed Attribute_lock From These Attributes</b>
                             <ul>
                                 <li>Class</li>
@@ -63,6 +64,19 @@
                                     <label for="exampleInputPassword2">Example : (PlaceHolder Attribute)</label>
                                     <input type="password" class="form-control" id="exampleInputPassword2" nt-placeholder="Password" required="">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h6>Add 'unique-' Prefixes To Set Unique Attribute</h6>
+                                <p>'unique-' Attribute Will Be Hide After First Run</p>
+                                <div class="p-3 rounded" style='font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace; color: #567482;word-wrap: normal;background-color: #f3f6fa;border: solid 1px #dce6f0;'>
+                                    &lt;input unique-ng-model ng-model="test" ... &gt;
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label for="exampleFormControlInput1">Email address</label>
+                                    <input readonly="" type="email" unique-ng-model ng-model="gg" class="form-control" id="exampleFormControlInput10" placeholder="name@example.com">
+                                </div>
                                 <button type="submit" class="btn btn-primary" >Submit</button>
                             </div>
                         </div>
@@ -87,6 +101,6 @@
     </body>
     <script src="js/InputGurd.js" ></script>
     <script>
-        $('#login').InputGurd();
+                                        $('#login').InputGurd();
     </script>
 </html>

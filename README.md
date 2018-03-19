@@ -17,26 +17,22 @@ This will keep your HTML contents safe.
 * Class
 * Style
 
-* If You Need To Apply InputGurd To Specific Area You Must Try This.
-
+#### If You Need To Apply InputGurd To Specific Area You Must Try This.
 ```
     $('#login').InputGurd();
 ```
 
-* Add 'NoGurd' Attribute to prevent InputGurd.
-
+#### Add 'NoGurd' Attribute to prevent InputGurd.
 ```
     <input NoGurd ... >
 ```
 
-* Add 'nt-' Prefixes to Attribute for prevent Attribute_Lock.
-
+#### Add 'nt-' Prefixes to Attribute for prevent Attribute_Lock.
 ```
     <input nt-placeholder="Password" ... >
 ```
 
-* If You Need To Apply InputGurd To Specific Element.
-
+#### If You Need To Apply InputGurd To Specific Element.
 ```
     <input InputGurd ... >
 ```

@@ -1,6 +1,8 @@
 # InputGurd.js(Beta)
 This will keep your HTML contents safe.
 
+[v2.0](https://github.com/gobzateloon/InputGurd.js/archive/v2.0.zip)
+
 [Try Demo](https://gobzateloon.github.io/examples/InputGurd.html)
 
 * First You Need To Import InputGurd.js To Your Project (Under the Body Tag)

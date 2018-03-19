@@ -1,1 +1,72 @@
-eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('(3(m){$.k.9=3(){5(g.b===0){5(4.b===0){e q}2 1={};$.j(4[0].r,3(){5(4.s){1[4.p]=4.l}});e 1}e m.u(4,g)}})($.k.9);(3(){2 8=[];3 d(){2 x=$(\'o,n,t\');8=[];f(2 i=0;i<x.b;i++){2 1=$(x[i]);2 a={};$.j(1.9(),3(6,h){5(6!=\'l\'&&6!=\'D\'&&6!=\'F\'&&6!=\'E\'){a[6]=h}});a[\'c\']=1;8.v(a)}}d();$(\'B\').C(\'w y\',3(){d()});z(3(){f(2 i=0;i<8.b;i++){2 1=8[i];f(2 7 A 1){5(7!=\'c\'){5(1.c.9(7)!=1[7]){1.c.9(7,1[7])}}}}},G)})();',43,43,'|obj|var|function|this|if|index|item|inputlist|attr|final|length|object|init|return|for|arguments|element||each|fn|value|old|select|input|name|null|attributes|specified|option|apply|push|DOMNodeInserted||DOMNodeRemoved|setInterval|in|body|bind|style|readonly|class|10'.split('|'),0,{}))
+(function (old) {
+    $.fn.attr = function () {
+        if (arguments.length === 0) {
+            if (this.length === 0) {
+                return null;
+            }
+            var obj = {};
+            $.each(this[0].attributes, function () {
+                if (this.specified) {
+                    obj[this.name] = this.value;
+                }
+            });
+            return obj;
+        }
+
+        return old.apply(this, arguments);
+    };
+})($.fn.attr);
+(function ($) {
+    $(document).ready(function () {
+        $(document).InputGurd('input[InputGurd],select[InputGurd],option[InputGurd],textarea[InputGurd]');
+    });
+    $.fn.InputGurd = function (xf) {
+        var inputlist = [];
+        var that = this;
+        function init() {
+            var x = $(that).find(xf != undefined ? xf : 'input,select,option,textarea');
+            inputlist = [];
+            for (var i = 0; i < x.length; i++) {
+                var obj = $(x[i]);
+                if (obj.attr('NoGurd') != undefined)
+                    continue;
+                var final = {};
+                $.each(obj.attr(), function (index, element) {
+                    index = index.toLowerCase();
+                    if (index != 'style' && index != 'class' && !(index.startsWith('nt-'))) {
+                        final[index] = element;
+                    } else {
+                        if (index.startsWith('nt-')) {
+                            obj.attr(index.replace('nt-', ''), element);
+                            obj.removeAttr(index);
+                        }
+                    }
+                });
+                obj.on('DOMNodeRemoved', function () {
+                    location.reload();
+                });
+                //console.log(obj);
+                final['object'] = obj;
+                inputlist.push(final);
+            }
+        }
+        init();
+        this.bind('DOMNodeInserted DOMNodeRemoved', function () {
+            init();
+        });
+        setInterval(function () {
+            for (var i = 0; i < inputlist.length; i++) {
+                var obj = inputlist[i];
+                for (var item in obj) {
+                    if (item != 'object') {
+                        if (obj.object.attr(item) != obj[item]) {
+                            obj.object.attr(item, obj[item]);
+                        }
+                    }
+                }
+            }
+        }, 10);
+        return this;
+    };
+})(jQuery);
+

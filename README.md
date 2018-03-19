@@ -38,7 +38,7 @@ This will keep your HTML contents safe.
 #### Add 'unique-' Prefixes To Set Unique Attribute
 * 'unique-' Attribute Will Be Hide After First Run
 ```
-	<input unique-ng-model ng-model="test" ... >
+    <input unique-ng-model ng-model="test" ... >
 ```
 
 #### If You Need To Apply InputGurd To Specific Element.

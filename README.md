@@ -12,7 +12,7 @@ This will keep your HTML contents safe.
 * Thats All For Now. Don't Forget This Is A Beta Version
 
 ### Rules
-#### If You Delete An Elements, Page Will Refresh
+#### If You Delete An Element, Page Will Refresh
 #### I Removed Attribute_Lock From These Attributes
 * Class
 * Style

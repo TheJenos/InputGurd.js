@@ -1,4 +1,3 @@
-(https://github.com/gobzateloon/InputGurd.js/archive/v2.0.zip)
 # InputGurd.js(Beta)
 This will keep your HTML contents safe.
 

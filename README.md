@@ -1,7 +1,7 @@
 # InputGurd.js
 **version 2.1**
 [![HitCount](http://hits.dwyl.io/gobzateloon/InputGurd.js.svg)](http://hits.dwyl.io/gobzateloon/InputGurd.js)
-## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 
 This Will Keep Your Input Elements Safe.
